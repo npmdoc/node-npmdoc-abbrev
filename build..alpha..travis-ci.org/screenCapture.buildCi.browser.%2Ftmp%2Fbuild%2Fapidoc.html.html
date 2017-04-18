@@ -72,15 +72,6 @@
 
         </li>
 
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.abbrev.toString">
-            function <span class="apidocSignatureSpan">abbrev.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
     </ol></li>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.abbrev.abbrev">module abbrev.abbrev</a><ol>
@@ -98,32 +89,6 @@
 
             <a class="apidocElementLiA" href="#apidoc.element.abbrev.abbrev.monkeyPatch">
             function <span class="apidocSignatureSpan">abbrev.abbrev.</span>monkeyPatch
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.abbrev.monkeyPatch">module abbrev.monkeyPatch</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.abbrev.monkeyPatch.monkeyPatch">
-            function <span class="apidocSignatureSpan">abbrev.</span>monkeyPatch
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.abbrev.toString">module abbrev.toString</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.abbrev.toString.toString">
-            function <span class="apidocSignatureSpan">abbrev.</span>toString
             <span class="apidocSignatureSpan">()</span>
             </a>
 
@@ -212,21 +177,6 @@
     </ul>
 
 
-
-    <h2>
-        <a href="#apidoc.element.abbrev.toString" id="apidoc.element.abbrev.toString">
-        function <span class="apidocSignatureSpan">abbrev.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
 </div>
 
 <div class="apidocSectionDiv">
@@ -304,52 +254,6 @@
     enumerable: false, configurable: true, writable: true
   })
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.abbrev.monkeyPatch" id="apidoc.module.abbrev.monkeyPatch">module abbrev.monkeyPatch</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.abbrev.monkeyPatch.monkeyPatch" id="apidoc.element.abbrev.monkeyPatch.monkeyPatch">
-        function <span class="apidocSignatureSpan">abbrev.</span>monkeyPatch
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function monkeyPatch() {
-  Object.defineProperty(Array.prototype, 'abbrev', {
-    value: function () { return abbrev(this) },
-    enumerable: false, configurable: true, writable: true
-  })
-
-  Object.defineProperty(Object.prototype, 'abbrev', {
-    value: function () { return abbrev(Object.keys(this)) },
-    enumerable: false, configurable: true, writable: true
-  })
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.abbrev.toString" id="apidoc.module.abbrev.toString">module abbrev.toString</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.abbrev.toString.toString" id="apidoc.element.abbrev.toString.toString">
-        function <span class="apidocSignatureSpan">abbrev.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
