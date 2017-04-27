@@ -1,6 +1,6 @@
 # npmdoc-abbrev
 
-#### api documentation for  [abbrev (v1.1.0)](https://github.com/isaacs/abbrev-js#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-abbrev.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-abbrev) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-abbrev.svg)](https://travis-ci.org/npmdoc/node-npmdoc-abbrev)
+#### basic api documentation for  [abbrev (v1.1.0)](https://github.com/isaacs/abbrev-js#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-abbrev.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-abbrev) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-abbrev.svg)](https://travis-ci.org/npmdoc/node-npmdoc-abbrev)
 
 #### Like ruby's abbrev module, but in js
 
@@ -61,7 +61,8 @@
         "preversion": "npm test",
         "test": "tap test.js --100"
     },
-    "version": "1.1.0"
+    "version": "1.1.0",
+    "bin": {}
 }
 ```
 
