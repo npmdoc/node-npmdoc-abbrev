@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -48,17 +48,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/isaacs/abbrev-js#readme"
-
-    >abbrev (1.1.1)</a>
+    <a href="https://github.com/isaacs/abbrev-js#readme">abbrev (1.1.1)</a>
 </h1>
 <h4>Like ruby's abbrev module, but in js</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.abbrev">module abbrev</a><ol>
 
@@ -100,18 +93,18 @@
     list = Array.prototype.slice.call(arguments, 0)
   }
   for (var i = 0, l = list.length, args = [] ; i &lt; l ; i ++) {
-    args[i] = typeof list[i] === &quot;string&quot; ? list[i] : String(list[i])
+    args[i] = typeof list[i] === "string" ? list[i] : String(list[i])
   }
 
-  // sort them lexicographically, so that they&apos;re next to their nearest kin
+  // sort them lexicographically, so that they're next to their nearest kin
   args = args.sort(lexSort)
 
   // walk through each, seeing how much it has in common with the next and previous
   var abbrevs = {}
-    , prev = &quot;&quot;
+    , prev = ""
   for (var i = 0, l = args.length ; i &lt; l ; i ++) {
     var current = args[i]
-      , next = args[i + 1] || &quot;&quot;
+      , next = args[i + 1] || ""
       , nextMatches = true
       , prevMatches = true
     if (current === next) continue
@@ -149,12 +142,12 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function monkeyPatch() {
-  Object.defineProperty(Array.prototype, &apos;abbrev&apos;, {
+  Object.defineProperty(Array.prototype, 'abbrev', {
     value: function () { return abbrev(this) },
     enumerable: false, configurable: true, writable: true
   })
 
-  Object.defineProperty(Object.prototype, &apos;abbrev&apos;, {
+  Object.defineProperty(Object.prototype, 'abbrev', {
     value: function () { return abbrev(Object.keys(this)) },
     enumerable: false, configurable: true, writable: true
   })
@@ -171,3 +164,4 @@
     ]
 </div>
 </div>
+</body></html>

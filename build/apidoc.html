@@ -27,6 +27,7 @@
     background: #eef;
     border: 1px solid;
     color: #777;
+    overflow-wrap: break-word;
     padding: 5px;
     white-space: pre-wrap;
 }
@@ -51,7 +52,7 @@
 
         href="https://github.com/isaacs/abbrev-js#readme"
 
-    >abbrev (v1.1.0)</a>
+    >abbrev (1.1.1)</a>
 </h1>
 <h4>Like ruby's abbrev module, but in js</h4>
 <div class="apidocSectionDiv"><a
@@ -81,28 +82,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.abbrev.abbrev">module abbrev.abbrev</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.abbrev.abbrev.abbrev">
-            function <span class="apidocSignatureSpan">abbrev.</span>abbrev
-            <span class="apidocSignatureSpan">(list)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.abbrev.abbrev.monkeyPatch">
-            function <span class="apidocSignatureSpan">abbrev.abbrev.</span>monkeyPatch
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -120,27 +99,27 @@
   if (arguments.length !== 1 || !Array.isArray(list)) {
     list = Array.prototype.slice.call(arguments, 0)
   }
-  for (var i = 0, l = list.length, args = [] ; i &#x3c; l ; i ++) {
-    args[i] = typeof list[i] === &#x22;string&#x22; ? list[i] : String(list[i])
+  for (var i = 0, l = list.length, args = [] ; i &lt; l ; i ++) {
+    args[i] = typeof list[i] === &quot;string&quot; ? list[i] : String(list[i])
   }
 
-  // sort them lexicographically, so that they&#x27;re next to their nearest kin
+  // sort them lexicographically, so that they&apos;re next to their nearest kin
   args = args.sort(lexSort)
 
   // walk through each, seeing how much it has in common with the next and previous
   var abbrevs = {}
-    , prev = &#x22;&#x22;
-  for (var i = 0, l = args.length ; i &#x3c; l ; i ++) {
+    , prev = &quot;&quot;
+  for (var i = 0, l = args.length ; i &lt; l ; i ++) {
     var current = args[i]
-      , next = args[i + 1] || &#x22;&#x22;
+      , next = args[i + 1] || &quot;&quot;
       , nextMatches = true
       , prevMatches = true
     if (current === next) continue
-    for (var j = 0, cl = current.length ; j &#x3c; cl ; j ++) {
+    for (var j = 0, cl = current.length ; j &lt; cl ; j ++) {
       var curChar = current.charAt(j)
-      nextMatches = nextMatches &#x26;&#x26; curChar === next.charAt(j)
-      prevMatches = prevMatches &#x26;&#x26; curChar === prev.charAt(j)
-      if (!nextMatches &#x26;&#x26; !prevMatches) {
+      nextMatches = nextMatches &amp;&amp; curChar === next.charAt(j)
+      prevMatches = prevMatches &amp;&amp; curChar === prev.charAt(j)
+      if (!nextMatches &amp;&amp; !prevMatches) {
         j ++
         break
       }
@@ -150,7 +129,7 @@
       abbrevs[current] = current
       continue
     }
-    for (var a = current.substr(0, j) ; j &#x3c;= cl ; j ++) {
+    for (var a = current.substr(0, j) ; j &lt;= cl ; j ++) {
       abbrevs[a] = current
       a += current.charAt(j)
     }
@@ -170,93 +149,12 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function monkeyPatch() {
-  Object.defineProperty(Array.prototype, &#x27;abbrev&#x27;, {
+  Object.defineProperty(Array.prototype, &apos;abbrev&apos;, {
     value: function () { return abbrev(this) },
     enumerable: false, configurable: true, writable: true
   })
 
-  Object.defineProperty(Object.prototype, &#x27;abbrev&#x27;, {
-    value: function () { return abbrev(Object.keys(this)) },
-    enumerable: false, configurable: true, writable: true
-  })
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.abbrev.abbrev" id="apidoc.module.abbrev.abbrev">module abbrev.abbrev</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.abbrev.abbrev.abbrev" id="apidoc.element.abbrev.abbrev.abbrev">
-        function <span class="apidocSignatureSpan">abbrev.</span>abbrev
-        <span class="apidocSignatureSpan">(list)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function abbrev(list) {
-  if (arguments.length !== 1 || !Array.isArray(list)) {
-    list = Array.prototype.slice.call(arguments, 0)
-  }
-  for (var i = 0, l = list.length, args = [] ; i &#x3c; l ; i ++) {
-    args[i] = typeof list[i] === &#x22;string&#x22; ? list[i] : String(list[i])
-  }
-
-  // sort them lexicographically, so that they&#x27;re next to their nearest kin
-  args = args.sort(lexSort)
-
-  // walk through each, seeing how much it has in common with the next and previous
-  var abbrevs = {}
-    , prev = &#x22;&#x22;
-  for (var i = 0, l = args.length ; i &#x3c; l ; i ++) {
-    var current = args[i]
-      , next = args[i + 1] || &#x22;&#x22;
-      , nextMatches = true
-      , prevMatches = true
-    if (current === next) continue
-    for (var j = 0, cl = current.length ; j &#x3c; cl ; j ++) {
-      var curChar = current.charAt(j)
-      nextMatches = nextMatches &#x26;&#x26; curChar === next.charAt(j)
-      prevMatches = prevMatches &#x26;&#x26; curChar === prev.charAt(j)
-      if (!nextMatches &#x26;&#x26; !prevMatches) {
-        j ++
-        break
-      }
-    }
-    prev = current
-    if (j === cl) {
-      abbrevs[current] = current
-      continue
-    }
-    for (var a = current.substr(0, j) ; j &#x3c;= cl ; j ++) {
-      abbrevs[a] = current
-      a += current.charAt(j)
-    }
-  }
-  return abbrevs
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.abbrev.abbrev.monkeyPatch" id="apidoc.element.abbrev.abbrev.monkeyPatch">
-        function <span class="apidocSignatureSpan">abbrev.abbrev.</span>monkeyPatch
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function monkeyPatch() {
-  Object.defineProperty(Array.prototype, &#x27;abbrev&#x27;, {
-    value: function () { return abbrev(this) },
-    enumerable: false, configurable: true, writable: true
-  })
-
-  Object.defineProperty(Object.prototype, &#x27;abbrev&#x27;, {
+  Object.defineProperty(Object.prototype, &apos;abbrev&apos;, {
     value: function () { return abbrev(Object.keys(this)) },
     enumerable: false, configurable: true, writable: true
   })
